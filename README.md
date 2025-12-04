@@ -15,10 +15,10 @@ A comprehensive ICU rounding tool designed for neurological intensive care units
 
 ## Usage
 
-To use the application, open the `NeuroICUrounds.html` file in a web browser.
+To use the application, open the `neuroicurounds.html` file in a web browser.
 
 ```
-open NeuroICUrounds.html
+open neuroicurounds.html
 ```
 
 Or simply double-click the file to open it in your default browser.
