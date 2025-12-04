@@ -13,16 +13,61 @@ A comprehensive ICU rounding tool designed for neurological intensive care units
 - Family communication log
 - Handoff and Excel export capabilities
 
-## Usage
+## How to Open the Application
 
-To use the application, open the `neuroicurounds.html` file in a web browser.
+### Method 1: Double-Click (Easiest)
+1. Download or locate the `neuroicurounds.html` file on your computer
+2. Double-click the file to open it in your default web browser
 
-```
+### Method 2: Right-Click and Open With
+1. Right-click on `neuroicurounds.html`
+2. Select "Open with" and choose your preferred browser (Chrome, Firefox, Safari, Edge, etc.)
+
+### Method 3: Open from Browser
+1. Open your web browser (Chrome, Firefox, Safari, Edge, etc.)
+2. Press `Ctrl+O` (Windows/Linux) or `Cmd+O` (Mac) to open the file dialog
+3. Navigate to and select `neuroicurounds.html`
+4. Click "Open"
+
+### Method 4: Drag and Drop
+1. Open your web browser
+2. Drag the `neuroicurounds.html` file and drop it into the browser window
+
+### Method 5: Command Line
+**Mac:**
+```bash
 open neuroicurounds.html
 ```
 
-Or simply double-click the file to open it in your default browser.
+**Windows:**
+```bash
+start neuroicurounds.html
+```
+
+**Linux:**
+```bash
+xdg-open neuroicurounds.html
+```
+
+## Troubleshooting
+
+### "Can't open the file" or "File won't open"
+- Make sure the file has the `.html` extension
+- Try right-clicking and selecting "Open with" → choose a web browser
+- If double-click opens a text editor, change your default application for HTML files to a web browser
+
+### File opens in a text editor instead of browser
+- Right-click the file → "Open with" → Select your browser (Chrome, Firefox, Safari, Edge)
+- On Windows: Right-click → "Open with" → "Choose another app" → Select browser → Check "Always use this app"
+- On Mac: Right-click → "Open With" → "Other..." → Select browser
+
+### Blank page or nothing loads
+- Make sure JavaScript is enabled in your browser
+- Try a different browser
+- Check that the file downloaded completely and is not corrupted
 
 ## Data Storage
 
-Patient data is stored locally in your browser's localStorage and persists between sessions.
+Patient data is stored locally in your browser's localStorage and persists between sessions. Your data stays on your computer and is never transmitted to any server.
+
+**Note:** If you clear your browser data/cache, your patient data may be deleted. Consider using the Excel export feature to back up your data regularly.
