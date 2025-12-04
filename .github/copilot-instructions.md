@@ -62,6 +62,15 @@ When modifying this project:
 4. Maintain the medical workflow accuracy (14-step rounding process)
 5. Follow HIPAA considerations (no PHI should be transmitted; data stays local)
 
+## Security Considerations
+
+This is a healthcare application with important security requirements:
+- **Data stays local**: All patient data must remain in browser localStorage only
+- **No external transmissions**: Never add code that sends data to external servers
+- **No tracking**: Do not add analytics or tracking scripts
+- **Input validation**: Sanitize all user inputs to prevent XSS attacks
+- **HIPAA compliance**: Any changes must maintain HIPAA considerations
+
 ## Medical Context
 
 This tool is designed for healthcare professionals in neuroICU settings. Key medical concepts:
@@ -80,8 +89,22 @@ Good tasks to assign:
 - Enhancing data validation
 - Adding new disease-specific modules
 - Improving accessibility
+- Fixing bugs in existing functionality
+- Refactoring code for clarity
+- Updating documentation
 
 Tasks requiring human review:
 - Changes to clinical protocols or medical decision logic
 - Security-related changes
 - Major architectural changes
+- Any changes that could affect patient safety calculations
+- Modifications to the 14-step rounding workflow order
+
+## Pull Request Guidelines
+
+When reviewing Copilot-generated PRs:
+1. Verify that all changes are contained within `neuroicurounds.html`
+2. Test the application by opening the HTML file in a browser
+3. Check that localStorage data migration is handled if data structure changes
+4. Ensure no external dependencies or network calls are introduced
+5. Validate that the medical workflow remains accurate
