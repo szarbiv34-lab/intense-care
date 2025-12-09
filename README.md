@@ -16,37 +16,37 @@ A comprehensive ICU rounding tool designed for neurological intensive care units
 ## How to Open the Application
 
 ### Method 1: Double-Click (Easiest)
-1. Download or locate the `neuroicurounds.html` file on your computer
+1. Download or locate the `neuroICUassistant.html` file on your computer
 2. Double-click the file to open it in your default web browser
 
 ### Method 2: Right-Click and Open With
-1. Right-click on `neuroicurounds.html`
+1. Right-click on `neuroICUassistant.html`
 2. Select "Open with" and choose your preferred browser (Chrome, Firefox, Safari, Edge, etc.)
 
 ### Method 3: Open from Browser
 1. Open your web browser (Chrome, Firefox, Safari, Edge, etc.)
 2. Press `Ctrl+O` (Windows/Linux) or `Cmd+O` (Mac) to open the file dialog
-3. Navigate to and select `neuroicurounds.html`
+3. Navigate to and select `neuroICUassistant.html`
 4. Click "Open"
 
 ### Method 4: Drag and Drop
 1. Open your web browser
-2. Drag the `neuroicurounds.html` file and drop it into the browser window
+2. Drag the `neuroICUassistant.html` file and drop it into the browser window
 
 ### Method 5: Command Line
 **Mac:**
 ```bash
-open neuroicurounds.html
+open neuroICUassistant.html
 ```
 
 **Windows:**
 ```bash
-start neuroicurounds.html
+start neuroICUassistant.html
 ```
 
 **Linux:**
 ```bash
-xdg-open neuroicurounds.html
+xdg-open neuroICUassistant.html
 ```
 
 ## Troubleshooting
