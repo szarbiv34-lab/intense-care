@@ -23,7 +23,7 @@ This is a comprehensive ICU rounding tool designed for neurological intensive ca
 
 ## Code Structure
 
-The main application is contained in `neuroicurounds.html`:
+The main application is contained in `neuroICUassistant.html`:
 - **CSS**: Embedded styles in `<style>` tag using CSS custom properties
 - **HTML**: Single-page app structure with sidebar, main content, and modals
 - **JavaScript**: Embedded in `<script>` tag at the end of the document
@@ -49,14 +49,22 @@ The main application is contained in `neuroicurounds.html`:
 ## Testing
 
 Since this is a simple static HTML application, changes should be:
-1. Validated by opening `neuroicurounds.html` in a browser
+1. Validated by opening `neuroICUassistant.html` in a browser
 2. Tested across different patient scenarios
 3. Verified that localStorage persists correctly
+
+### Manual Testing Steps
+- Open `neuroICUassistant.html` in a browser (Chrome, Firefox, Safari, or Edge)
+- Add a test patient with various diagnoses
+- Complete the 14-step workflow
+- Verify data persists after page reload
+- Test export functionality
+- Verify no console errors appear
 
 ## Making Changes
 
 When modifying this project:
-1. Keep the single-file architecture (all code in `neuroicurounds.html`)
+1. Keep the single-file architecture (all code in `neuroICUassistant.html`)
 2. Test changes locally by opening the HTML file in a browser
 3. Ensure backward compatibility with existing localStorage data
 4. Maintain the medical workflow accuracy (14-step rounding process)
@@ -103,8 +111,27 @@ Tasks requiring human review:
 ## Pull Request Guidelines
 
 When reviewing Copilot-generated PRs:
-1. Verify that all changes are contained within `neuroicurounds.html`
+1. Verify that all changes are contained within `neuroICUassistant.html`
 2. Test the application by opening the HTML file in a browser
 3. Check that localStorage data migration is handled if data structure changes
 4. Ensure no external dependencies or network calls are introduced
 5. Validate that the medical workflow remains accurate
+
+## File Structure
+
+The repository contains:
+- `neuroICUassistant.html` - Main application file (single-page HTML with embedded CSS and JavaScript)
+- `index.html` - Redirect page to main application
+- `neuroicurounds.html` - Legacy file (empty, redirects to neuroICUassistant.html)
+- `README.md` - User-facing documentation
+- `PRD.md` - Product Requirements Document
+- `.github/copilot-instructions.md` - This file (instructions for Copilot)
+- `.github/workflows/` - GitHub Actions for deployment
+
+## Build and Deployment
+
+**No build step required** - This is a static HTML application.
+
+**Deployment**: The application is automatically deployed via GitHub Pages when changes are pushed to the main branch.
+
+**Local Development**: Simply open `neuroICUassistant.html` in a web browser. No server or build process needed.
