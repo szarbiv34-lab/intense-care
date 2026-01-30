@@ -32,14 +32,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Prepare static files
-        run: |
-          mkdir -p _site
-          cp index.html neuroicurounds.html README.md _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site'
+          # Upload entire repository (includes all HTML and MD files)
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
