@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeuroICU Sequential Rounds</title>
+  <title>Early Tracheostomy & PUG Tube Rounds</title>
   <style>
     :root{--primary:#1e40af;--primary-light:#3b82f6;--success:#059669;--warning:#d97706;--danger:#dc2626;--surface:#fff;--surface-alt:#f8fafc;--text:#0f172a;--text-muted:#64748b;--border:#e2e8f0;--sah:#7c3aed;--ich:#dc2626;--stroke:#2563eb;--tbi:#f59e0b;--cardiac:#ec4899}
     *{box-sizing:border-box;margin:0;padding:0}
@@ -171,8 +171,8 @@
 <div class="app">
   <aside class="sidebar">
     <div class="sidebar-header">
-      <h1>🧠 NeuroICU Rounds</h1>
-      <p>AtlantiCare • Sequential Flow</p>
+      <h1>🫁 Early Trach & PUG Tube</h1>
+      <p>Focused Rounds • Early Airway & Nutrition</p>
     </div>
     
     <div class="team-section">
@@ -199,7 +199,7 @@
   <main class="main" id="mainArea">
     <div class="empty-state" id="emptyState">
       <h3>Select a Patient</h3>
-      <p>Choose a patient from the census to begin rounds</p>
+      <p>Track early tracheostomy and PUG tube readiness during rounds</p>
     </div>
     
     <div id="patientArea" style="display:none;flex-direction:column;height:100%">
@@ -413,6 +413,15 @@
             </div>
             <div class="visage-result" id="visageResult">Score: 0 — Not candidate for early trach</div>
           </div>
+
+          <div class="card" id="trachPlanCard" style="display:none">
+            <div class="card-title">Early Tracheostomy Plan</div>
+            <div class="check-item"><input type="checkbox" id="s6_trachEval" onchange="updateProgress()"><label for="s6_trachEval">Eligibility reviewed</label><select id="trachEligibility" onchange="save()"><option value="">--</option><option value="candidate">Candidate</option><option value="defer">Defer</option><option value="nocandidate">Not candidate</option></select><span class="role-tag role-md">MD</span></div>
+            <div class="check-item"><input type="checkbox" id="s6_trachConsult" onchange="updateProgress()"><label for="s6_trachConsult">Consult status</label><select id="trachConsult" onchange="save()"><option value="">--</option><option value="notneeded">Not needed</option><option value="pending">Pending</option><option value="ordered">Ordered</option><option value="completed">Completed</option></select><span class="role-tag role-app">APP</span></div>
+            <div class="check-item"><input type="checkbox" id="s6_trachTarget" onchange="updateProgress()"><label for="s6_trachTarget">Target trach day</label><input type="number" id="trachTargetDay" min="1" style="width:70px" onchange="save()"><span class="role-tag role-rt">RT</span></div>
+            <div class="check-item"><input type="checkbox" id="s6_trachFamily" onchange="updateProgress()"><label for="s6_trachFamily">Family discussion</label><select id="trachFamily" onchange="save()"><option value="">--</option><option value="yes">Completed</option><option value="scheduled">Scheduled</option><option value="needs">Needs discussion</option></select><span class="role-tag role-md">MD</span></div>
+            <div class="check-item"><input type="checkbox" id="s6_trachBarrier" onchange="updateProgress()"><label for="s6_trachBarrier">Barriers noted</label><input type="text" id="trachBarriers" placeholder="Anticoagulation, neuro status..." onchange="save()"></div>
+          </div>
         </section>
         
         <!-- STEP 7: Cardiovascular -->
@@ -524,6 +533,15 @@
             <div class="check-item"><input type="checkbox" id="s11_goal" onchange="updateProgress()"><label for="s11_goal">At goal rate/calories</label><select id="nutrGoal" onchange="save()"><option value="">--</option><option value="goal">At goal</option><option value="advancing">Advancing</option><option value="held">Held</option></select></div>
             <div class="check-item"><input type="checkbox" id="s11_ppi" onchange="updateProgress()"><label for="s11_ppi">Stress ulcer prophylaxis</label><select id="ppiStatus" onchange="save()"><option value="">--</option><option value="ppi">PPI</option><option value="h2">H2 blocker</option><option value="none">None needed</option><option value="needs">NEEDS ORDER</option></select><span class="role-tag role-app">APP</span></div>
             <div class="check-item"><input type="checkbox" id="s11_bowel" onchange="updateProgress()"><label for="s11_bowel">Bowel regimen</label><select id="bowelStatus" onchange="save()"><option value="">--</option><option value="regular">Regular BMs</option><option value="constipated">Constipated</option><option value="diarrhea">Diarrhea</option></select><span class="role-tag role-rn">RN</span></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">PUG Tube Planning</div>
+            <div class="check-item"><input type="checkbox" id="s11_pugCandidate" onchange="updateProgress()"><label for="s11_pugCandidate">Candidacy reviewed</label><select id="pugCandidate" onchange="save()"><option value="">--</option><option value="candidate">Candidate</option><option value="defer">Defer</option><option value="nocandidate">Not candidate</option></select><span class="role-tag role-md">MD</span></div>
+            <div class="check-item"><input type="checkbox" id="s11_pugTiming" onchange="updateProgress()"><label for="s11_pugTiming">Target placement day</label><input type="number" id="pugTargetDay" min="1" style="width:70px" onchange="save()"><span class="role-tag role-rd">RD</span></div>
+            <div class="check-item"><input type="checkbox" id="s11_pugConsult" onchange="updateProgress()"><label for="s11_pugConsult">Consult status</label><select id="pugConsult" onchange="save()"><option value="">--</option><option value="notneeded">Not needed</option><option value="pending">Pending</option><option value="ordered">Ordered</option><option value="completed">Completed</option></select><span class="role-tag role-app">APP</span></div>
+            <div class="check-item"><input type="checkbox" id="s11_pugFamily" onchange="updateProgress()"><label for="s11_pugFamily">Family discussion</label><select id="pugFamily" onchange="save()"><option value="">--</option><option value="yes">Completed</option><option value="scheduled">Scheduled</option><option value="needs">Needs discussion</option></select><span class="role-tag role-md">MD</span></div>
+            <div class="check-item"><input type="checkbox" id="s11_pugBarrier" onchange="updateProgress()"><label for="s11_pugBarrier">Barriers noted</label><input type="text" id="pugBarriers" placeholder="Coagulopathy, prognosis..." onchange="save()"></div>
           </div>
         </section>
         
@@ -767,6 +785,7 @@ function loadData(p) {
   updateICP();
   updateProgress();
   checkAlerts();
+  checkTrach();
 }
 
 function save() {
@@ -933,6 +952,7 @@ function checkTrach() {
   const airway = document.getElementById('airway').value;
   const icuDay = parseInt(document.getElementById('icuDay').value) || 1;
   document.getElementById('visageSection').style.display = (p?.dx === 'tbi' && airway === 'ett' && icuDay <= 5) ? '' : 'none';
+  document.getElementById('trachPlanCard').style.display = airway === 'ett' ? '' : 'none';
 }
 
 function calcVISAGE() {
